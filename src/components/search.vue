@@ -1,16 +1,24 @@
 <template>
     <div>
         <div class="input-search">
-            <el-autocomplete  :fetch-suggestions="querySearch" v-model="searchValue" placeholder="请输入搜索内容">
-                <el-button slot="append" icon="el-icon-search"></el-button>
+            <el-autocomplete :trigger-on-focus="false"  :fetch-suggestions="querySearch" v-model="searchValue" placeholder="请输入搜索内容">
+                <!-- <el-button type="primary" slot="append" icon="el-icon-search"></el-button> -->
+                <el-button type="primary" slot="append" icon="el-icon-search"></el-button>
             </el-autocomplete>
         </div>
+        <div class="input-search">
+            <el-input placeholder="请输入搜索内容" v-model="state1" clearable>
+                <el-button class="el-icon-search" slot="append"></el-button>
+            </el-input>
+        </div>
+
     </div>
 </template>
 <script>
 export default {
     data(){
         return {
+           state1:'',
            searchValue:'',
            inputSuggestions:[{"value":"三鲜小龙虾","address":"上海五福路"},
            { "value": "三全鲜食（北新泾店）", "address": "长宁区新渔路144号" },

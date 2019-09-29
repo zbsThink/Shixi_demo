@@ -1,0 +1,75 @@
+
+$li-color:#00f;
+@mixin li-border-radius {
+    -webkit-border-radius:10px;
+    -o-border-radius:10px;
+    -ms-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+ul.fruitUl{
+    width:200px;
+   li.fruit{
+       list-style: none;
+       border:1px solid #f00;
+       text-align:center;
+       color:$li-color;
+       &:hover{
+         color:#0f0;
+       }
+       @include li-border-radius
+   }
+}
+
+img{
+    width:200px;
+    height:200px;
+}
+@mixin  no-bullets {
+    color:#f00;
+    li{
+        list-style-image: none;
+        list-style-type: none;
+        margin-left:10px;
+    }
+}
+ul.imgUl{
+    @include no-bullets
+    
+}
+@mixin hover-status {
+    color:#f00;
+    text-decoration: underline;
+}
+//使用参数
+@mixin link-colors($normal,$hover,$visit) {
+    color: $normal;
+    &:hover{color:$hover;}
+    &:visited{color:$visit;}
+}
+//实数替换参数
+// a{
+//     @include link-colors(blue,red ,green )
+// }
+a,.span{
+    @include link-colors(
+      $hover:red ,
+      $normal:blue,
+      $visit:green
+      )
+}
+h3 {
+    @extend .span;
+}
+//组合选择器样式以组合选择器形式继承
+.test span {
+    border:1px solid  #f00;
+    border-radius:5px;
+    padding:5px 10px;
+}
+.div-test{
+    @extend .test;//表现为.div-test span
+    color:#e0f;
+}
+
+

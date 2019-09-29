@@ -4,7 +4,10 @@
     <!-- <HelloWorld/> -->
     <!-- <Slider/> -->
     <!-- <LeftNav/> -->
-    <Search/>
+    <!-- <Search/> -->
+    <!-- <Upload/> -->
+    <!-- <ScssStudy/> -->
+    <FormTest/>
   </div>
 </template>
 
@@ -13,13 +16,19 @@ import HelloWorld from './components/HelloWorld'
 import Slider from './components/slider'
 import LeftNav from './components/leftNav'
 import Search from './components/search'
+import Upload from './components/upload'
+import ScssStudy from './components/scssStudy'
+import FormTest from './components/formTest'
 export default {
   name: 'App',
   components: {
     HelloWorld,
     Slider,
     LeftNav,
-    Search
+    Search,
+    Upload,
+    ScssStudy,
+    FormTest
   }
 }
 </script>
@@ -32,5 +41,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
+  margin:0;
+  padding:0;
 }
 </style>
